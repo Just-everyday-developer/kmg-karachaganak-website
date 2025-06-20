@@ -1,6 +1,6 @@
 {
-    "name": "practice_website",
-    "short_name": "practice_website",
+    "name": "KMG-Karachaganak practice_website",
+    "short_name": "KMG-K practice_website",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
