@@ -1,3 +1,4 @@
+import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../controllers/search_controller.dart' as custom;
@@ -45,10 +46,19 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           icon: const Icon(Icons.visibility_outlined),
           label: const Text("Версия для слабовидящих"),
         ),
-        const VerticalDivider(thickness: 2),
-        TextButton(onPressed: () {}, child: const Text("Eng")),
-        TextButton(onPressed: () {}, child: const Text("Рус")),
-        TextButton(onPressed: () {}, child: const Text("Қаз")),
+        TextButton.icon(
+            onPressed: () {},
+            icon: CountryFlag.fromCountryCode("USA", height: 20, width: 20, shape: Circle(),),
+            label: const Text("Eng")
+        ),
+        TextButton.icon(
+            onPressed: () {},
+            icon: CountryFlag.fromCountryCode("RUS", height: 20, width: 20, shape: Circle()),
+            label: const Text("Рус")),
+        TextButton.icon(
+            onPressed: () {},
+            icon: CountryFlag.fromCountryCode("KZ", height: 20, width: 20, shape: Circle()),
+            label: const Text("Қаз")),
       ],
     );
   }

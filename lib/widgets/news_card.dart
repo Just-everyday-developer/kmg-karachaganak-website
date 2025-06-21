@@ -8,7 +8,9 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: 250, maxWidth: 400),
+        child: Container(
       margin: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -108,7 +110,7 @@ class NewsCard extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ));
   }
 
   // Форматирование даты

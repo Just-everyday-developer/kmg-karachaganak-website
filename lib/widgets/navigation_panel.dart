@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:practice_website/Pages/ContactsPage.dart';
+import 'package:practice_website/Pages/HotlinePage.dart';
+import 'package:practice_website/Pages/PressCenterPage.dart';
 import '../models/menu_item.dart';
 import '../Pages/AboutCompanyPage.dart';
 import '../Pages/MainPage.dart';
@@ -94,7 +97,7 @@ class NavigationPanelState extends State<NavigationPanel> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const AboutCompanyPage(),
+                          builder: (_) => const PressCenterPage(),
                         ),
                       );
                     },
@@ -141,7 +144,7 @@ class NavigationPanelState extends State<NavigationPanel> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const AboutCompanyPage(),
+                          builder: (_) => const ContactsPage(),
                         ),
                       );
                     },
@@ -166,7 +169,7 @@ class NavigationPanelState extends State<NavigationPanel> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const AboutCompanyPage(),
+                          builder: (_) => const HotlinePage(),
                         ),
                       );
                     },
