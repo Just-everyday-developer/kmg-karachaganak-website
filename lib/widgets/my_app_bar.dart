@@ -2,14 +2,23 @@ import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../controllers/search_controller.dart' as custom;
+import '../controllers/theme_mode_toggler.dart';
 import '../models/menu_item.dart';
 import '../pages/MainPage.dart';
 import '../widgets/my_search_bar.dart';
 
 
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
+class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
   const MyAppBar({Key? key}) : super(key: key);
 
+  @override
+  State<MyAppBar> createState() => _MyAppBarState();
+
+  @override
+  Size get preferredSize => const Size.fromHeight(100);
+}
+
+class _MyAppBarState extends State<MyAppBar> {
   @override
   Size get preferredSize => const Size.fromHeight(100);
 
@@ -41,6 +50,12 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: [
+        IconButton(
+            onPressed: () {
+               context.read<ThemeToggler>().toggleTheme();
+            },
+            icon: Icon(Icons.dark_mode_outlined, color: Colors.black,)
+        ),
         TextButton.icon(
           onPressed: () {},
           icon: const Icon(Icons.visibility_outlined),

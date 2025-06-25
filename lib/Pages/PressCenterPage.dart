@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:practice_website/widgets/copyright_box.dart';
 import 'package:provider/provider.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:practice_website/controllers/search_controller.dart' as custom;
@@ -123,7 +124,8 @@ class PressCenterPageState extends State<PressCenterPage> {
                   },
                   itemCount: newsItems.length,
                 ),
-                Footer()
+                Footer(),
+                CopyrightBox()
               ]),
             ),
           ),

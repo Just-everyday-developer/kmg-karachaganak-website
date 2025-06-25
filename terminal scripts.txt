@@ -1,0 +1,6 @@
+.\inject_key.ps1
+flutter build web --web-renderer canvaskit
+
+// если не сработает из-за --web-renderer
+flutter build web --dart-define=FLUTTER_WEB_USE_SKIA=true
+

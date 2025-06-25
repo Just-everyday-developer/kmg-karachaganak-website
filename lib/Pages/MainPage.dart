@@ -6,6 +6,7 @@ import 'package:practice_website/Pages/ContactsPage.dart';
 import 'package:practice_website/Pages/HotlinePage.dart';
 import 'package:practice_website/Pages/JobsPage.dart';
 import 'package:practice_website/Pages/PressCenterPage.dart';
+import 'package:practice_website/controllers/theme_mode_toggler.dart';
 import 'package:practice_website/data/main_page_text.dart';
 import 'package:practice_website/widgets/copyright_box.dart';
 import 'package:practice_website/widgets/footer.dart';
@@ -46,7 +47,7 @@ class MainPageState extends State<MainPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    // TODO.md: implement initState
     super.initState();
   }
 
@@ -106,7 +107,7 @@ class MainPageState extends State<MainPage> {
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         height: 1.5,
-                        color: Colors.grey[800],
+                        color: context.read<ThemeToggler>().isDarkMode ? Colors.white : Colors.grey[800],
                       ),
                     ),)
                   ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../controllers/theme_mode_toggler.dart';
 import '../models/news_item.dart';
 
 class NewsCard extends StatelessWidget {
@@ -72,10 +74,11 @@ class NewsCard extends StatelessWidget {
                 // Заголовок
                 Text(
                   newsItem.title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     height: 1.3,
+                    color: context.read<ThemeToggler>().isDarkMode ? Colors.black : Colors.grey
                   ),
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
@@ -94,7 +97,7 @@ class NewsCard extends StatelessWidget {
                 // Описание
                 Text(
                   newsItem.description,
-                  style: const TextStyle(fontSize: 14, height: 1.4),
+                  style: TextStyle(fontSize: 14, height: 1.4, color: context.read<ThemeToggler>().isDarkMode ? Colors.black : Colors.grey),
                   maxLines: 5,
                   overflow: TextOverflow.ellipsis,
                 ),

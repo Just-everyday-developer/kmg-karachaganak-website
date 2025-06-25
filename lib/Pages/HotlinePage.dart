@@ -31,7 +31,11 @@ class HotlinePageState extends State<HotlinePage> {
         children: [
           Expanded(
             child: SingleChildScrollView(
-              child: Column(children: [NavigationPanel(), Footer()]),
+              child: Column(children: [
+                NavigationPanel(),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.45),
+                Footer()
+              ]),
             ),
           ),
         ],

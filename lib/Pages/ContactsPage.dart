@@ -1,3 +1,6 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:practice_website/widgets/contact_card.dart';
+import 'package:practice_website/widgets/map_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:practice_website/controllers/search_controller.dart' as custom;
@@ -34,10 +37,51 @@ class ContactsPageState extends State<ContactsPage> {
         children: [
           Expanded(
             child: SingleChildScrollView(
-              child: Column(children: [NavigationPanel(), Footer()]),
+              child: Column(children: [
+                NavigationPanel(),
+                MapWidget(),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 0),
+          child: Column(children: [
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                  ContactCard(
+                      text: "Адрес",
+                      description: '''
+БЦ Изумрудный квартал блок  
+Улица Динмухамед Конаев, 8. 6 этаж''',
+                    icon: Icons.location_on_outlined,
+                    iconColor: Colors.orange
+                  ),
+                      ContactCard(
+                        text: "Контактные телефоны",
+                        description: "+7 800 080 47 47",
+                        phoneType: NumberPhoneType.phone,
+                        icon: Icons.phone,
+                        iconColor: Colors.blue,
+                      ),
+                      ContactCard(
+                        text: "Whatsapp",
+                        description: "+7 771 191 8816",
+                        phoneType: NumberPhoneType.whatsapp,
+                        icon: FontAwesomeIcons.whatsapp,
+                        iconColor: Colors.green,
+                      ),
+                      ContactCard(
+                        text: "Электронная почта",
+                        description: "kmg-k@kmg-k.kz",
+                        phoneType: NumberPhoneType.other,
+                        icon: Icons.email,
+                        iconColor: Colors.blue,
+                      ),
+                ]),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.15)]
+          )),
+                Footer()]),
             ),
-          ),
-        ],
+          )],
       ),
     );
   }

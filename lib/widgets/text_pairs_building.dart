@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../controllers/theme_mode_toggler.dart';
 
 // Вспомогательный метод для генерации пар текст-подтекст
 List<Widget> buildTextPairs(List<(String, String)> pairs) {
@@ -11,6 +14,7 @@ List<Widget> buildTextPairs(List<(String, String)> pairs) {
           children: [
             Icon(Icons.circle, size: 10, color: Colors.blue),
             SizedBox(width: 8),
+            LayoutBuilder(builder: (context, _) =>
             MouseRegion(
               cursor: SystemMouseCursors.text,
                 child: SelectableText(
@@ -18,8 +22,8 @@ List<Widget> buildTextPairs(List<(String, String)> pairs) {
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w600,
-                color: Colors.grey[900],
-              ),
+                color: context.read<ThemeToggler>().isDarkMode ? Colors.white : Colors.grey[900],
+              )),
             ),),
           ],
         )

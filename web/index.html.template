@@ -29,10 +29,19 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>practice_website</title>
+  <title>KMG-K</title>
   <link rel="manifest" href="manifest.json">
+
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
+  <script>
+    function initMap() {
+      console.log();
+    }
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=%GOOGLE_MAPS_API_KEY%&libraries=places">
+  </script>
 </body>
 </html>
